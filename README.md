@@ -57,6 +57,44 @@ h1{margin:0;font-size:clamp(25px,4vw,38px);color:#30394a}
 .confetti{position:fixed;pointer-events:none;z-index:20;font-size:30px;animation:fall 900ms ease-out forwards}
 @keyframes fall{0%{transform:translateY(0) scale(.5);opacity:1}100%{transform:translateY(130px) rotate(25deg) scale(1.2);opacity:0}}
 @media(max-width:900px){.layout{grid-template-columns:1fr}.subject-list{max-height:300px}header{align-items:flex-start;flex-direction:column}.actions{width:100%}}
+
+
+/* iPhone landscape optimization */
+@media (orientation: landscape) and (max-height: 500px) {
+  body { padding: 8px; }
+  .app { max-width: 100%; }
+  header { padding: 10px 14px !important; margin-bottom: 8px !important; }
+  header h1 { font-size: 20px !important; }
+  header p { font-size: 11px !important; margin: 2px 0 !important; }
+  .main-grid { grid-template-columns: 220px 1fr !important; gap: 8px !important; }
+  .panel { padding: 10px !important; border-radius: 14px !important; }
+  .panel h2 { font-size: 14px !important; margin-bottom: 7px !important; }
+  .subject-list { max-height: 240px !important; overflow-y: auto; }
+  .subject-card { padding: 7px !important; margin-bottom: 6px !important; min-height: 42px; }
+  .subject-card .name { font-size: 12px !important; }
+  .subject-card .tag { font-size: 9px !important; }
+  .schedule-wrap { overflow-x: auto; }
+  .schedule { min-width: 650px !important; gap: 5px !important; }
+  .day-header { padding: 6px 4px !important; font-size: 12px !important; }
+  .slot { min-height: 82px !important; padding: 4px !important; }
+  .slot-label { font-size: 9px !important; }
+  .slot-card { padding: 7px !important; min-height: 62px !important; border-radius: 10px !important; }
+  .slot-card .subject-name { font-size: 11px !important; }
+  .slot-card button { font-size: 9px !important; padding: 4px 6px !important; }
+  .slot-card.done:after { font-size: 8px !important; padding: 2px 5px !important; top: -7px !important; right: -4px !important; }
+  .empty { font-size: 10px !important; }
+  .toolbar { gap: 5px !important; }
+  button { min-height: 32px !important; }
+}
+
+/* iPhone portrait: keep schedule usable with horizontal scrolling */
+@media (max-width: 700px) {
+  body { padding: 8px; }
+  .main-grid { grid-template-columns: 1fr !important; }
+  .schedule-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .schedule { min-width: 720px; }
+  .subject-list { max-height: 180px; overflow-y: auto; }
+}
 </style>
 </head>
 <body>
