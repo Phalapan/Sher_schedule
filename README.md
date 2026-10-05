@@ -151,6 +151,25 @@ h1{margin:0;font-size:clamp(25px,4vw,38px);color:#30394a}
   .tip, .footer-note { display:none; }
   .empty-list { padding:10px 4px; font-size:8px; }
 }
+
+/* iPhone landscape: allow vertical scrolling, keep horizontal layout fixed */
+@media (max-width: 900px) and (orientation: landscape) {
+  html, body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100%;
+  }
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+  .app, .main, .content, .page, .layout {
+    height: auto !important;
+    min-height: 100vh;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+  }
+}
 </style>
 </head>
 <body>
